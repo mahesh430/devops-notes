@@ -24,7 +24,15 @@ Removes sections from each line of files.
 **Common Flags:**
 - `-d`: Specifies the delimiter.
 - `-f`: Selects only these fields.
-
+#### sample data
+``` bash
+ID,Name,Age,Department
+101,John Doe,30,Marketing
+102,Jane Smith,25,Finance
+103,Emily Johnson,40,Human Resources
+104,Michael Brown,50,IT
+105,Lisa Davis,35,Research
+```
 **Example:**
 ```sh
 cut -d':' -f1 file.txt

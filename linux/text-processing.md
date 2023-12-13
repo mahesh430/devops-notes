@@ -1,55 +1,79 @@
 # Text Processing Commands in Shell
 
-This document provides an overview and examples of common text processing commands in a shell environment. These commands are essential for manipulating and analyzing text data in files.
+This document provides an overview of common text processing commands in a shell environment, along with their most used flags and practical examples.
 
 ## 1. Sort (`sort`)
 
-The `sort` command is used to sort lines in text files.
+Sorts lines in text files.
+
+**Common Flags:**
+- `-n`: Sorts based on numerical value.
+- `-r`: Reverses the result of comparisons.
+- `-R`: Shuffles (randomizes) the output.
 
 **Example:**
 ```sh
-sort names.txt
+sort -nr file.txt
 ```
-This command sorts the lines in `names.txt` in ascending order.
+Sorts the lines in `file.txt` numerically in reverse order.
 
 ## 2. Cut (`cut`)
 
-The `cut` command is used to remove sections from each line of files, typically for extracting columns of data.
+Removes sections from each line of files.
+
+**Common Flags:**
+- `-d`: Specifies the delimiter.
+- `-f`: Selects only these fields.
 
 **Example:**
 ```sh
-cut -d',' -f1 data.csv
+cut -d':' -f1 file.txt
 ```
-This command extracts the first column from a CSV file named `data.csv`.
+Extracts the first field from each line in `file.txt`, assuming ':' as the field delimiter.
 
 ## 3. AWK (`awk`)
 
-`awk` is a powerful text processing programming language, used for manipulating data and generating reports.
+A text processing programming language.
+
+**Common Usage:**
+- `{print $1, $2}`: Prints specific fields.
+- `/pattern/ {action}`: Applies action to lines matching pattern.
 
 **Example:**
 ```sh
-awk '{print $2, $1}' names.txt
+awk '/error/ {print $1}' log.txt
 ```
-This command prints the second and first fields of each line in `names.txt`.
+Prints the first field of lines that contain the word "error" in `log.txt`.
 
 ## 4. Sed (`sed`)
 
-`sed` (stream editor) is used for filtering and transforming text.
+Stream editor for filtering and transforming text.
+
+**Common Flags:**
+- `s/pattern/replacement/`: Substitutes pattern with replacement.
+- `-i`: Edits files in place.
 
 **Example:**
 ```sh
-sed 's/old/new/g' file.txt
+sed -i 's/old/new/g' file.txt
 ```
-This command replaces all occurrences of "old" with "new" in `file.txt`.
+Replaces all occurrences of "old" with "new" in `file.txt` directly in the file.
 
 ## 5. Word Count (`wc`)
 
-The `wc` command is used to print the newline, word, and byte counts for files.
+Prints newline, word, and byte counts for files.
+
+**Common Flags:**
+- `-l`: Prints the line count.
+- `-w`: Prints the word count.
+- `-c`: Prints the byte count.
 
 **Example:**
 ```sh
-wc -l file.txt
+wc -lw file.txt
 ```
-This command counts the number of lines in `file.txt`.
+Prints the line and word count of `file.txt`.
 
 ---
+
+These examples and flags provide a glimpse into the functionality of each command. The commands `sort`, `cut`, `awk`, `sed`, and `wc` are versatile tools in text processing and are essential for shell scripting and command-line data manipulation.

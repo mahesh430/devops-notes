@@ -63,5 +63,3 @@ ls non_existing_file >all_output.log 2>&1
 This redirects both the standard output and error output of the `ls` command to `all_output.log`.
 
 ---
-
-Feel free to use this template as part of your GitHub documentation. Each section provides a brief description of the command along with a practical example.

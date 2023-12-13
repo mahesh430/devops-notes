@@ -59,7 +59,13 @@ satvik director purchase 80000
 ```
 **Example:**
 ```sh
+awk '/manager/ {print}' employee.txt
+```
+```sh
 awk '/error/ {print $1}' log.txt
+```
+```sh
+awk '{print $1,$4}' employee.txt 
 ```
 Prints the first field of lines that contain the word "error" in `log.txt`.
 
@@ -99,5 +105,3 @@ wc -lw file.txt
 Prints the line and word count of `file.txt`.
 
 ---
-
-These examples and flags provide a glimpse into the functionality of each command. The commands `sort`, `cut`, `awk`, `sed`, and `wc` are versatile tools in text processing and are essential for shell scripting and command-line data manipulation.

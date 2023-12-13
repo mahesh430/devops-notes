@@ -41,12 +41,22 @@ Extracts the first field from each line in `file.txt`, assuming ':' as the field
 
 ## 3. AWK (`awk`)
 
-A text processing programming language.
+Awk is a scripting language used for manipulating data and generating reports. The awk command programming language requires no compiling and allows the user to use variables, numeric functions, string functions, and logical operators. 
 
 **Common Usage:**
 - `{print $1, $2}`: Prints specific fields.
 - `/pattern/ {action}`: Applies action to lines matching pattern.
-
+### sample data
+``` bash
+ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000
+```
 **Example:**
 ```sh
 awk '/error/ {print $1}' log.txt
@@ -55,15 +65,21 @@ Prints the first field of lines that contain the word "error" in `log.txt`.
 
 ## 4. Sed (`sed`)
 
-Stream editor for filtering and transforming text.
+SED command in UNIX stands for stream editor and it can perform lots of functions on file like searching, find and replace, insertion or deletion. Though most common use of SED command in UNIX is for substitution or for find and replace. By using SED you can edit files even without opening them, which is much quicker way to find and replace something in file, than first opening that file in VI Editor and then changing it.
 
 **Common Flags:**
 - `s/pattern/replacement/`: Substitutes pattern with replacement.
-- `-i`: Edits files in place.
+### sample data
+``` bash
+unix is great os. unix is opensource. unix is free os.
+learn operating system.
+unix linux which one you choose.
+unix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+```
 
 **Example:**
 ```sh
-sed -i 's/old/new/g' file.txt
+sed  's/unix/linux/g' file.txt
 ```
 Replaces all occurrences of "old" with "new" in `file.txt` directly in the file.
 
